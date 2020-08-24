@@ -1,11 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CustomListClass;
 
 namespace CustomListTesting
 {
     [TestClass]
-    public class UnitTest1
+    public class ToStringTesting
     {
         [TestMethod]
         public void TestMethod1()
