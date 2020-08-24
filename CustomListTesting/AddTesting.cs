@@ -9,16 +9,121 @@ namespace CustomListTesting
     public class AddTesting
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Add_AddTwoValues_CountOf2()
         {
-            //arange
+            {
+                //arrange
 
+                CustomList<int> customList = new CustomList<int>();
+                int value1 = 1;
+                int value2 = 2;
+                int expected = 2;
+                int actual;
 
-            //act
+                //act
+                customList.Add(value1);
+                customList.Add(value2);
+                actual = customList.Count;
 
+                //assert
+                Assert.AreEqual(expected, actual);
+            }
 
-            //assert
+        
 
         }
+
+        [TestMethod]
+        public void Add_AddTwoValues_CapacityOf4()
+        {
+            //arrange
+
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int expected = 4;
+            int actual;
+
+            //act
+            customList.Add(value1);
+            customList.Add(value2);
+            actual = customList.Capacity;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_AddTwoValues_IndexAtZeroIsOne()
+        {
+
+            //arange
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int expected = 1;
+            int actual;
+
+            //act
+            customList.Add(value1);
+            customList.Add(value2);
+            actual = customList[0];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+
+
+        }
+
+        [TestMethod]
+        public void Add_AddTwoValues_IndexAtFiveIsOne()
+        {
+            //arange
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int expected = 1;
+            int actual;
+
+            //act
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            actual = customList[4];
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Add_AddFiveValues_CapacityDoubles()
+        {
+            //arange
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int expected = 8;
+            int actual;
+            //act
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            actual = customList.Capacity;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+        //arange
+
+
+        //act
+
+
+        //assert
     }
 }
