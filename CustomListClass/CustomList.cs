@@ -75,5 +75,10 @@ namespace CustomListClass
             _count++;
         }
 
+        public void Remove()
+        {
+
+        }
+
     }
 }

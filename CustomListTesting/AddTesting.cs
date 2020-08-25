@@ -9,7 +9,7 @@ namespace CustomListTesting
     public class AddTesting
     {
         [TestMethod]
-        public void Add_AddTwoValues_CountOf2()
+        public void Add_Add2Values_CountOf2()
         {
             {
                 //arrange
@@ -34,7 +34,7 @@ namespace CustomListTesting
         }
 
         [TestMethod]
-        public void Add_AddSixValues_CountOf6()
+        public void Add_Add6Values_CountOf6()
         {
             {
                 //arrange
@@ -103,6 +103,7 @@ namespace CustomListTesting
             customList.Add(ref value1);
             customList.Add(ref value2);
             customList.Add(ref value2);
+
             actual = customList.Capacity;
 
             //assert
@@ -110,7 +111,7 @@ namespace CustomListTesting
         }
 
         [TestMethod]
-        public void Add_AddTwoValues_IndexAtZeroIsOne()
+        public void Add_AddTwoValues_IndexAt0Is1()
         {
 
             //arange
@@ -132,7 +133,7 @@ namespace CustomListTesting
         }
 
         [TestMethod]
-        public void Add_AddSixValues_IndexAtFiveIsOne()
+        public void Add_AddSixValues_IndexAt4Is1()
         {
             //arange
             CustomList<int> customList = new CustomList<int>();
@@ -177,7 +178,7 @@ namespace CustomListTesting
 
 
         [TestMethod]
-        public void Add_AddTenValues_CapacityAtIndexNineIsTwo()
+        public void Add_AddTenValues_CapacityAtIndex8Is2()
         {
             //arange
             CustomList<int> customList = new CustomList<int>();
