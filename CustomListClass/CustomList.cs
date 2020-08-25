@@ -15,6 +15,7 @@ namespace CustomListClass
         int _capacity;
         int _count;
 
+
         public int Count
         {
             get
@@ -35,6 +36,11 @@ namespace CustomListClass
             }
         }
 
+        public T this[T index]
+        {
+            get => _items[index];
+            
+        }
 
         public CustomList()
         {
@@ -43,12 +49,19 @@ namespace CustomListClass
             _items = new T[_capacity];
         }
 
-        public void Add(T item)
+        public void Add(ref T item)
         {
+            T[] temporary;
+            T[] _new_items;
 
             if (_count == _capacity)
             {
-                //Something
+                temporary = new T[_capacity];
+                temporary = _items;
+                _capacity = _capacity * 2;
+                _new_items = new T[_capacity];
+                _new_items = temporary;
+
             }
             _items[_count] = item;
             _count++;
