@@ -36,9 +36,13 @@ namespace CustomListClass
             }
         }
 
-        public T this[T index]
+        public T this[int index]
         {
-            get => _items[index];
+            get 
+            {
+                return _items[index];
+            }
+               
             
         }
 
@@ -52,15 +56,19 @@ namespace CustomListClass
         public void Add(ref T item)
         {
             T[] temporary;
-            T[] _new_items;
+            
 
             if (_count == _capacity)
             {
+                _capacity += _capacity;
                 temporary = new T[_capacity];
-                temporary = _items;
-                _capacity = _capacity * 2;
-                _new_items = new T[_capacity];
-                _new_items = temporary;
+                for (int i = 0; i < _count; i++)
+                {
+                    temporary[i] = _items[i];
+                }
+                _items = temporary;
+                
+              
 
             }
             _items[_count] = item;
