@@ -54,7 +54,7 @@ namespace CustomListClass
             _items = new T[_capacity];
         }
 
-        public void Add(ref T item)
+        public void Add(T item)
         {
             T[] temporary;
             
@@ -76,10 +76,11 @@ namespace CustomListClass
             _count++;
         }
 
-        public void Remove(T item)
+        public bool Remove(T item)
         {
             int indexLocation;
             T[] temporary;
+            temporary = new T[_capacity];
             //check to see if item which was removed was in the list
             //if no do nothing/ dont run this method
             //if it is
@@ -93,47 +94,54 @@ namespace CustomListClass
                 if (status)
                 {
                     indexLocation = i;
-                    temporary = new T[_capacity];
-                    for (int j = 0; j < _count; j++)
+                    
+                    for (int j = i; j < _count; j++)
                     {
+                        
                         if (j == indexLocation)
                         {
                             continue;
                         }
-                        temporary[j] = _items[j];
+                        temporary[j-1] = _items[j];
                     }
                     _items = temporary;
+                    _count--;
                 }
+
+                if (status)
+                {
+                    return true;
+                }
+
+                temporary[i] = _items[i];
                 
             }
+
+            return false;
              //replace with location of first instance
            
             //make a new array that doesnt have the first instance of that item
             //make sure the count goes donw 1
-            _count--;
+            
             // make sure all the indexes are correct
 
-            foreach (T thing in _items)
-            {
-               // _items[_count - 1];
-            }
             
 
         }
 
-        public bool ContainsValue(T item)
-        {
-            bool found = false;
-            foreach (T value in _items)
-            {
-                if (value == item)
-                {
-                    found = true;
-                    break;
-                }
-            }
-            return found;
-        }
+        //public bool ContainsValue(T item)
+        //{
+        //    bool found = false;
+        //    foreach (T value in _items)
+        //    {
+        //        if (value == item)
+        //        {
+        //            found = true;
+        //            break;
+        //        }
+        //    }
+        //    return found;
+        //}
 
         
     }

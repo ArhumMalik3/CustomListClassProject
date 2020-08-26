@@ -21,8 +21,8 @@ namespace CustomListTesting
                 int actual;
 
                 //act
-                customList.Add(ref value1);
-                customList.Add(ref value2);
+                customList.Add(value1);
+                customList.Add(value2);
                 actual = customList.Count;
 
                 //assert
@@ -46,12 +46,12 @@ namespace CustomListTesting
                 int actual;
 
                 //act
-                customList.Add(ref value1);
-                customList.Add(ref value2);
-                customList.Add(ref value1);
-                customList.Add(ref value2);
-                customList.Add(ref value1);
-                customList.Add(ref value2);
+                customList.Add(value1);
+                customList.Add(value2);
+                customList.Add(value1);
+                customList.Add(value2);
+                customList.Add(value1);
+                customList.Add(value2);
                 actual = customList.Count;
 
                 //assert
@@ -74,8 +74,8 @@ namespace CustomListTesting
             int actual;
 
             //act
-            customList.Add(ref value1);
-            customList.Add(ref value2);
+            customList.Add(value1);
+            customList.Add(value2);
             actual = customList.Capacity;
 
             //assert
@@ -94,15 +94,15 @@ namespace CustomListTesting
             int actual;
 
             //act
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value2);
 
             actual = customList.Capacity;
 
@@ -122,8 +122,8 @@ namespace CustomListTesting
             int actual;
 
             //act
-            customList.Add(ref value1);
-            customList.Add(ref value2);
+            customList.Add(value1);
+            customList.Add(value2);
             actual = customList[0];
 
             //assert
@@ -143,12 +143,12 @@ namespace CustomListTesting
             int actual;
 
             //act
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
             actual = customList[4];
 
             //assert
@@ -165,11 +165,11 @@ namespace CustomListTesting
             int expected = 8;
             int actual;
             //act
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
             actual = customList.Capacity;
 
             //assert
@@ -187,16 +187,16 @@ namespace CustomListTesting
             int expected = 2;
             int actual;
             //act
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
-            customList.Add(ref value2);
-            customList.Add(ref value1);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
+            customList.Add(value2);
+            customList.Add(value1);
             actual = customList[8];
 
             //assert
