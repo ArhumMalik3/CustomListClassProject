@@ -79,27 +79,35 @@ namespace CustomListClass
         public void Remove(T item)
         {
             int indexLocation;
+            T[] temporary;
             //check to see if item which was removed was in the list
             //if no do nothing/ dont run this method
             //if it is
             //get its location of first instance in array
-            
+
             for (int i = 0; i < _count; i++)
             {
                 bool status = _items[i].Equals(item);
+
+                
                 if (status)
                 {
-
+                    indexLocation = i;
+                    temporary = new T[_capacity];
+                    for (int j = 0; j < _count; j++)
+                    {
+                        if (j == indexLocation)
+                        {
+                            continue;
+                        }
+                        temporary[j] = _items[j];
+                    }
+                    _items = temporary;
                 }
+                
             }
-            indexLocation = 0; //replace with location of first instance
-            for (int i = 0; i < _count; i++)
-            {
-                if (i== indexLocation) 
-                {
-                    continue;
-                }
-            }
+             //replace with location of first instance
+           
             //make a new array that doesnt have the first instance of that item
             //make sure the count goes donw 1
             _count--;
@@ -127,16 +135,6 @@ namespace CustomListClass
             return found;
         }
 
-        public void RemoveCan(Can can)
-        {
-            for (int i = 0; i < inventory.Count; i++)
-            {
-                if (inventory[i].name == can.name)
-                {
-                    inventory.RemoveAt(i);
-                    break;
-                }
-            }
-        }
+        
     }
 }
