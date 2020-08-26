@@ -125,6 +125,26 @@ namespace CustomListTesting
             Assert.AreEqual(expected, actual);
 
         }
+
+        public void Remove_RemoveValueWhichIsNotThere_BoolIsTrue()
+        {
+            //arange
+            CustomList<int> customList = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+            int value3 = 3;
+            bool expected = true;
+            bool actual;
+
+            //act
+            customList.Add(ref value1);
+            customList.Add(ref value2);
+            customList.Remove(value3);
+            actual = customList.Remove(value);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
         //arange
 
 
