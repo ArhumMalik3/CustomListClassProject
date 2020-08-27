@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 
 
-namespace CustomListClass
+namespace CustomListClass 
 {
-    public class CustomList<T>
+    public class CustomList<T> /*: IEnumerable*/
     {
         T[] _items;
 
@@ -53,6 +53,11 @@ namespace CustomListClass
             _capacity = 4;
             _items = new T[_capacity];
         }
+
+        //public IEnumerator<T> GetEnumerator()
+        //{
+            
+        //}
 
         public void Add(T item)
         {
@@ -129,6 +134,11 @@ namespace CustomListClass
 
         }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
         //public bool ContainsValue(T item)
         //{
         //    bool found = false;
@@ -143,6 +153,6 @@ namespace CustomListClass
         //    return found;
         //}
 
-        
+
     }
 }
