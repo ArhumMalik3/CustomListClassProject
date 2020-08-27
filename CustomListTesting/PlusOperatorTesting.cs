@@ -152,5 +152,33 @@ namespace CustomListTesting
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void PlusOperator_ContentsOfTheCustomLists_CountOf3()
+        {
+            //arange
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> result = new CustomList<int>();
+            int value1 = 1;
+            int value2 = 2;
+
+            int expected = 3;
+            int actual;
+
+            //act
+            listOne.Add(value1);
+            listOne.Add(value1);
+
+            listOne.Add(value2);
+            listTwo.Add(value1);
+            listTwo.Remove(value1);
+            
+
+            actual = result.Count;
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

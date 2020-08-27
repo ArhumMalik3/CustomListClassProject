@@ -150,7 +150,17 @@ namespace CustomListClass
             return tempString;
         }
 
+        public static CustomList<T> operator +(CustomList<T> customList1, CustomList<T> customList2)
+        {
 
+            return customList1 + customList2;
+        }
+
+        public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)
+        {
+
+            return customList1 - customList2;
+        }
 
         //public bool ContainsValue(T item)
         //{
