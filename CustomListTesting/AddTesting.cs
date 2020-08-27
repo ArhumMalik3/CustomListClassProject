@@ -178,7 +178,7 @@ namespace CustomListTesting
 
 
         [TestMethod]
-        public void Add_AddTenValues_CapacityAtIndex8Is2()
+        public void Add_AddTenValues_ValueAtIndex8Is2()
         {
             //arange
             CustomList<int> customList = new CustomList<int>();
