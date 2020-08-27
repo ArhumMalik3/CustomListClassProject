@@ -140,7 +140,11 @@ namespace CustomListClass
             {
 
                 tempString += _items[i];
-                tempString += ", ";
+                if (i != _count - 1)
+                {
+                    tempString += ", ";
+                }
+                
             }
             
             return tempString;
