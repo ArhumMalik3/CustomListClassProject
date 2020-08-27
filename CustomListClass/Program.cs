@@ -10,7 +10,11 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
-          
+            List<int> testList = new List<int>();
+            testList.Add(1);
+
+            string testString = "";
+            testString += testList[0];
         }
     }
 }

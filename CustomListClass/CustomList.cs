@@ -129,14 +129,21 @@ namespace CustomListClass
             //make sure the count goes donw 1
             
             // make sure all the indexes are correct
-
-            
-
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            //return a string that represents the object instance
+            //
+            string tempString = "";
+            for (int i = 0; i < _count; i++)
+            {
+
+                tempString += _items[i];
+                tempString += ", ";
+            }
+            
+            return tempString;
         }
 
         //public bool ContainsValue(T item)
