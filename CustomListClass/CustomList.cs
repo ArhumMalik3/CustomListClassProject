@@ -168,8 +168,23 @@ namespace CustomListClass
 
         public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)
         {
+            CustomList<T> combinedLists;
+            for (int i = 0; i < customList2.Count; i++)
+            {
+                for (int j = 0; j < customList1.Count; j++)
+                {
+                    
+                    if (customList1[j].Equals(customList1[i]))
+                    {
+                        customList1.Remove(customList2[i]);
+                    }
 
-            return customList1 - customList2;
+                }
+            }
+
+            combinedLists = customList1;
+            return combinedLists;
+
         }
 
         //public bool ContainsValue(T item)
