@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 
 
+
 namespace CustomListClass 
 {
-    public class CustomList<T> /*: IEnumerable*/
+    public class CustomList<T> : IEnumerable
     {
         T[] _items;
 
@@ -37,11 +38,38 @@ namespace CustomListClass
             }
         }
 
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < _count; i++)
+            {
+                yield return _items[i];
+            }
+        }
+
         public T this[int index]
         {
             get 
             {
-                return _items[index];
+                if (index <= _count && index >= 0)
+                {
+                    return _items[index];
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            set
+            {
+                if (index <= _count && index >= 0)
+                {
+                    _items[index] = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
             }
                
             
@@ -54,10 +82,7 @@ namespace CustomListClass
             _items = new T[_capacity];
         }
 
-        //public IEnumerator<T> GetEnumerator()
-        //{
-            
-        //}
+        
 
         public void Add(T item)
         {
@@ -168,7 +193,7 @@ namespace CustomListClass
 
         public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)
         {
-            CustomList<T> combinedLists;
+            CustomList<T> combinedLists = new CustomList<T>();
             for (int i = 0; i < customList2.Count; i++)
             {
                 for (int j = 0; j < customList1.Count; j++)
@@ -182,9 +207,42 @@ namespace CustomListClass
                 }
             }
 
-            combinedLists = customList1;
+            combinedLists += customList1;
             return combinedLists;
 
+        }
+
+        public CustomList<T> Zip(CustomList<T> customList1)
+        {
+            CustomList<T> zippedList= new CustomList<T>();
+            int count = _count + customList1._count;
+            int index = 0;
+
+            while (count > 0)
+            {
+                if(_count == 0)
+                {
+                    zippedList.Add(customList1[index]);
+                    count--;
+                    index++;
+                }
+                else if (zippedList._count == 0)
+                {
+                    zippedList.Add(_items[index]);
+                    count--;
+                    index++;
+                }
+
+                else
+                {
+                    zippedList.Add(_items[index]);
+                    count--;
+                    zippedList.Add(customList1[index]);
+                    count--;
+                    index++;
+                }
+            }
+            return zippedList;
         }
 
         //public bool ContainsValue(T item)
