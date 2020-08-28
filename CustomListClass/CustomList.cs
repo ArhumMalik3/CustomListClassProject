@@ -152,8 +152,18 @@ namespace CustomListClass
 
         public static CustomList<T> operator +(CustomList<T> customList1, CustomList<T> customList2)
         {
+            CustomList<T> combinedLists = new CustomList<T>();
+            for (int i = 0; i < customList1.Count; i++)
+            {
+                combinedLists.Add(customList1[i]);
+            }
 
-            return customList1 + customList2;
+            for (int i = 0; i < customList2.Count; i++)
+            {
+                combinedLists.Add(customList2[i]);
+            }
+            return combinedLists;
+
         }
 
         public static CustomList<T> operator -(CustomList<T> customList1, CustomList<T> customList2)
